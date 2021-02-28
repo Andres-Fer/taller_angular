@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form>
+                <div class="d-flex">
+                    <button class="btn btn-out-line-primary mr-2 mb-2">BUSCAR</button>
+                    <input type="text" class="form-control" placeholder="¿Qué quieres leer hoy?"/>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<div class="row">
+    <div *ngFor="let book of books" class="col-12 col-md-3">
+        <div class="card libro shadow-sm">
+            <div class="card-body">
+                <h4 class="libro-nombre text-dark">{{book.name}}</h4>
+                <figure class="libro-caratula">
+                    <img [src]="book.cover" alt="">
+                </figure>
+                <h5 class="libro-precio text-primary font-weight-bold">{{book.unitValue | currency}}</h5>
+                <div class="libro-boton">
+                    <a class="btn btn-secondary" [routerLink]="['/libros',book._id]"><span class="material-icons mr-1">visibility</span>ver</a>
+                </div>
+                <p class="libro-descripcion">{{book.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
